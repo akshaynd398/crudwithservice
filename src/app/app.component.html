@@ -1,0 +1,116 @@
+
+
+<ul >
+
+  <div>
+Enter name : <input type="text" [(ngModel)]="name" > <br>
+Enter telephone no : <input type ="text" [(ngModel)]="tel" ><br>
+Enter email: <input type="text" [(ngModel)]="email">
+Enter id : <input type="text" [(ngModel)]="id"> <br><br>
+
+
+
+<input type="button" value="save" (click)="saveAll()">
+<input type="button" value="update" (click)="update()">
+<input type="button" value="delete" (click)="delete()">
+<input type="button" value="edit" (click)="edit()">
+
+</div>
+      <head>
+          <style>
+          table, th, td {
+            border: 1px solid black;
+           text-align: center;
+          }
+          </style>
+          </head>
+          <body>
+          
+          <table border="2" *ngIf="customerObservable | async as customers else empty" >
+              
+              <th>NAME</th>
+              <th>TELEPHONE</th>
+              <th>EMAIL</th> 
+              <th> ID</th>
+            
+            
+            
+            
+            <tr *ngFor="let customer of customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.tel}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.id}}</td>
+            </tr>
+            
+            
+            
+            
+            <!-- <tr>
+              <td>February</td>
+              <td>$80</td>
+            </tr>   -->
+            
+          </table>
+
+        
+          
+          </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <table border="2">
+<tr>
+     
+  
+  <th> NAME </th>
+       <th> TELEPHONE </th>
+       <th> EMAIL </th>
+
+      
+    </tr>
+      
+     
+
+   <<td>{{customer.name}} </td>
+      </tr>
+
+     <tr> 
+  <td> {{customer.tel}}  </td>
+
+     </tr>
+
+     <tr>
+
+     <td>{{customer.email}}  </td>
+
+     </tr> -->
+    
+  
+  
+
+    </ul>
+
+    <ng-template #empty> No customers yet </ng-template>
+  
